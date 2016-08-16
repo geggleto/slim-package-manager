@@ -1,6 +1,8 @@
 # Slim Package Manager
 
-This document will outline how to structure your module.
+The goal of the package manager is to provide an API for including Inter-Operable Slim modules.
+
+This document will outline how to structure your module and how to include modules
 
 # Workflow
 
