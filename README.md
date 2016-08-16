@@ -61,13 +61,25 @@ $slimPackageManager->include("path/to/vendor/project/package.php");
 ```php
 <?php
 
-$this->app->get('/login', MyNamespace\LoginController::class. ":login");
-$this->app->post('/login', MyNamespace\LoginController::class. ":processLogin");
+$this->app->get('/login', MyPackageNamespace\LoginController::class. ":login")->setName("user.login");
+$this->app->post('/login', MyPackageNamespace\LoginController::class. ":processLogin")->setName("process.user.login");
 
 $this->registerTemplateDirectory((new MyNamespace\TemplateDirectoryLocator)->templatePath());
+```
 
 
+### Extending Packages
+Extending packages is possible with https://github.com/slimphp/Slim/pull/1963 
+It enables users to override the callable on a route with a new one.
 
+Then it is possible to extend package classes with your own implementations.
+
+```php
+<?php
+
+$slimPackageManager->include("./vendor/MyPackageNamespace/package.php");
+
+$slimPackageManager->override("user.login", MyNamespace\LoginController::class. ":login");
 ```
 
 
