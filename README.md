@@ -36,3 +36,9 @@ Then to register
 $this->registerTemplateDirectory((new TemplateDirectoryLocator)->templatePath());
 ```
 
+
+# Using a package
+
+Pretty simple.
+
+```$slimPackageManager->include("path/to/vendor/project/package.php");```
