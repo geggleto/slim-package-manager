@@ -16,7 +16,7 @@ The package must register their routes, and template files via the API methods.
 
 ### Registering a route
 
-`$this->get/post/put/delete/group(pattern, callabe) : Route`
+`$this->app->get/post/put/delete/group(pattern, callabe) : Route`
 
 ### Registering your templates
 
@@ -36,9 +36,37 @@ Then to register
 $this->registerTemplateDirectory((new TemplateDirectoryLocator)->templatePath());
 ```
 
+### Register Your Dependencies
+
+```php
+$this-app->container['dep'] => function ($c) {
+  return new Dep();
+};
+```
+
 
 # Using a package
 
 Pretty simple.
 
-```$slimPackageManager->include("path/to/vendor/project/package.php");```
+```php
+$slimPackageManager->include("path/to/vendor/project/package.php");
+```
+
+
+### Sample package
+
+```php
+<?php
+
+$this->app->get('/login', MyNamespace\LoginController::class. ":login");
+$this->app->post('/login', MyNamespace\LoginController::class. ":processLogin");
+
+$this->registerTemplateDirectory((new MyNamespace\TemplateDirectoryLocator)->templatePath());
+
+
+
+```
+
+
+
