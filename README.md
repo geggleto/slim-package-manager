@@ -63,6 +63,9 @@ $slimPackageManager->include("path/to/vendor/project/package.php");
 
 $this->app->get('/login', MyPackageNamespace\LoginController::class. ":login")->setName("user.login");
 $this->app->post('/login', MyPackageNamespace\LoginController::class. ":processLogin")->setName("process.user.login");
+$this->container[MyPackageNamespace\LoginController::class] => function ($c) {
+    return new MyPackageNamespace\LoginController($c);
+};
 
 $this->registerTemplateDirectory((new MyNamespace\TemplateDirectoryLocator)->templatePath());
 ```
