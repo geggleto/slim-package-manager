@@ -4,9 +4,9 @@ This document will outline how to structure your module.
 
 # Workflow
 
-Packages will install via composer.
-Packages will expose a config file in the root directory called package.php
-Packages will use PSR-4
+- Packages will install via composer.
+- Packages will expose a config file in the root directory called package.php
+- Packages will use PSR-4
 
 # Config file
 
