@@ -61,6 +61,8 @@ $slimPackageManager->include("path/to/vendor/project/package.php");
 ```php
 <?php
 
+$this->setNamespace("login."); //Required
+
 $this->app->get('/login', MyPackageNamespace\LoginController::class. ":login")->setName("user.login");
 $this->app->post('/login', MyPackageNamespace\LoginController::class. ":processLogin")->setName("process.user.login");
 $this->container[MyPackageNamespace\LoginController::class] => function ($c) {
@@ -85,5 +87,14 @@ $slimPackageManager->include("./vendor/MyPackageNamespace/package.php");
 $slimPackageManager->override("user.login", MyNamespace\LoginController::class. ":login");
 ```
 
+# Persistence
 
+# Middleware
 
+# Conflict Resolution
+
+# Problems
+
+- [ ] Peristence
+- [ ] Middleware
+- [ ] Conflict Resolution
